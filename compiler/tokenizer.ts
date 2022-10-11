@@ -45,7 +45,6 @@ export const tokenizer = (input: string): IToken[] => {
         }
 
         // 处理字符串
-    
         if( char === '"' ) {
             let value = '';
             // 跳过当前的双引号 "
@@ -79,5 +78,3 @@ export const tokenizer = (input: string): IToken[] => {
 
     return tokens;
 }
-
-
