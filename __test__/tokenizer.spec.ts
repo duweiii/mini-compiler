@@ -1,4 +1,4 @@
-import { tokenizer } from "../tokenizer";
+import { tokenizer } from "../compiler/tokenizer";
 
 
 it("happy path", () => {
