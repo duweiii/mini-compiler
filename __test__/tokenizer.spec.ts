@@ -1,7 +1,7 @@
 import { tokenizer } from "../compiler/tokenizer";
 
 
-it("happy path", () => {
+it("tokenizer happy path", () => {
     const input = '(add 2 (subtract 4 2))';
     
     const tokens = tokenizer(input)
