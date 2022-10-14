@@ -1,8 +1,5 @@
 // lexical analysis
-interface IToken {
-    type: string,
-    value: string | number
-}
+import { IToken } from "./interface";
 
 export const tokenizer = (input: string): IToken[] => {
 

@@ -5,7 +5,7 @@
   "license": "CC-BY-4.0",
   "main": "./the-super-tiny-compiler.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose ./__test__"
   },
   "dependencies": {
     "@babel/preset-env": "^7.19.4",
