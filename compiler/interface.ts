@@ -13,3 +13,16 @@ export interface IAst {
   type: string,
   body: Array<IFuncNode | IToken>
 }
+
+export enum EType {
+  paren = 'paren',
+  name = 'name',
+  number = 'number',
+  string = 'string',
+}
+
+export enum ENodeType {
+  function = 'callExpression',
+  number = 'numberLiteral',
+  string = 'stringLiteral'
+}
