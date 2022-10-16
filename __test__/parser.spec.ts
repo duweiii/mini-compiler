@@ -1,5 +1,33 @@
 import { parser } from "../compiler/parser";
-
+export const ast = {
+  type: 'program',
+  body: [
+    {
+      type: 'callExpression',
+      value: 'add',
+      params: [
+        {
+          type: 'numberLiteral',
+          value: '2'
+        },
+        {
+          type: "callExpression",
+          value: 'subtract',
+          params: [
+            {
+              type: 'numberLiteral',
+              value: '4'
+            },
+            {
+              type: 'numberLiteral',
+              value: '2'
+            },
+          ]
+        }
+      ]
+    }
+  ]
+}
 it("parser happy path", () => {
   // (add 2 (subtract 4 2))
   const tokens = [
@@ -13,36 +41,6 @@ it("parser happy path", () => {
     { type: 'paren', value: ')' },
     { type: 'paren', value: ')' },
   ]
-  const ast = {
-    type: 'program',
-    body: [
-      {
-        type: 'callExpression',
-        value: 'add',
-        params: [
-          {
-            type: 'numberLiteral',
-            value: '2'
-          },
-          {
-            type: "callExpression",
-            value: 'subtract',
-            params: [
-              {
-                type: 'numberLiteral',
-                value: '4'
-              },
-              {
-                type: 'numberLiteral',
-                value: '2'
-              },
-            ]
-          }
-        ]
-      }
-    ]
-  }
-
   const result = parser(tokens);
   expect( result ).toEqual(ast)
 })
