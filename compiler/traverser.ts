@@ -15,11 +15,11 @@ export const traverser = (ast: IAst, visitor: IVisitor) => {
     switch(node.type){
       case 'program':
         // @ts-ignore
-        traverseArray(node.body, parent);
+        traverseArray(node.body, node);
         break;
       case 'callExpression':
         // @ts-ignore
-        traverseArray(node.params, parent);
+        traverseArray(node.params, node);
         break;
       case 'numberLiteral':
       case 'stringLiteral':

@@ -9,11 +9,12 @@ export interface IFuncNode {
   params: Array<INode>
 }
 
-export type INode = IFuncNode | IToken;
+export type INode = IFuncNode | IToken | Record<string, any>;
 
 export interface IAst {
   type: string,
-  body: Array<INode>
+  body: Array<INode>,
+  [key: string]: any
 }
 
 export enum ETokenType {
@@ -36,3 +37,27 @@ export interface IVisitor {
     exit?: (node: INode | IAst, parent: INode | null) => void
   }
 }
+
+// result of transform => new ast 
+export interface INewAst {
+  type: string,
+  body: INewAstBody
+}
+
+export type INewAstBody = Array<IToken | IExpression> 
+
+export interface IExpression {
+  type: string,
+  expression: IExp
+}
+
+export interface IExp {
+  type: string,
+  callee: {
+    type: string,
+    name: string,
+  },
+  arguments: IArg
+}
+
+export type IArg = IExpression | IToken;
