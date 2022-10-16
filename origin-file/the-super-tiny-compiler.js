@@ -818,7 +818,7 @@ function traverser(ast, visitor) {
  * have built and pass it to our traverser function with a visitor and will
  * create a new ast.
  *
- * ----------------------------------------------------------------------------
+ * -----------------------------------------------------------------------------
  *   Original AST                     |   Transformed AST
  * ----------------------------------------------------------------------------
  *   {                                |   {
@@ -828,7 +828,7 @@ function traverser(ast, visitor) {
  *       name: 'add',                 |       expression: {
  *       params: [{                   |         type: 'CallExpression',
  *         type: 'NumberLiteral',     |         callee: {
- *         value: '2'                 |           type: 'Identifier',
+ *         value: '2'                 |            type: 'Identifier',
  *       }, {                         |           name: 'add'
  *         type: 'CallExpression',    |         },
  *         name: 'subtract',          |         arguments: [{

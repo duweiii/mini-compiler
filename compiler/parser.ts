@@ -1,10 +1,10 @@
 // syntax analysis
-import { IAst, IFuncNode, IToken } from "./interface";
+import { IAst, IFuncNode, INode, IToken } from "./interface";
 
 export const parser = (tokens: IToken[]): IAst => {
   let current = 0;
 
-  const walk = (): IFuncNode | IToken => {
+  const walk = (): INode => {
     let token = tokens[current];
 
     // 处理数字token
